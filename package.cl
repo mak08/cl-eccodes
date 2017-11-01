@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description
 ;;; Author         Michael Kappert 2017
-;;; Last Modified <michael 2017-11-01 17:05:08>
+;;; Last Modified <michael 2017-11-01 17:56:39>
 
 (defpackage "CL-ECCODES"
   (:use "COMMON-LISP" "LOCAL-TIME" "CFFI")
@@ -41,8 +41,8 @@
             "CODES-GET-DOUBLE-ARRAY"
             "CODES-GET-DOUBLE-ARRAY-AS-SINGLE"
 
-            "CODES-ITERATOR-NEW"
-            "CODES-ITERATOR-NEXT"))
+            "CODES-GRIB-ITERATOR-NEW"
+            "CODES-GRIB-ITERATOR-NEXT"))
 
 ;;; EOF
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

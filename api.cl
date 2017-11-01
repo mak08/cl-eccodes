@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description  libeccodes bindings
 ;;; Author         Michael Kappert 2015
-;;; Last Modified <michael 2017-11-01 17:03:42>
+;;; Last Modified <michael 2017-11-01 17:58:03>
 
 (in-package :cl-eccodes)
 
@@ -252,13 +252,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; new
 
-(defun codes-iterator-new (handle)
+(defun codes-grib-iterator-new (handle)
   (with-foreign-object (err '(:pointer :int)) 
     (values 
-     (codes_iterator_new handle 0 err)
+     (codes_grib_iterator_new handle 0 err)
      (mem-ref err :int))))
 
-(defcfun codes_iterator_new
+(defcfun codes_grib_iterator_new
   :pointer
   (handle :pointer)
   (flags :long)
@@ -267,18 +267,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; next
 
-(defun codes-iterator-next (iterator)
+(defun codes-grib-iterator-next (iterator)
   (with-foreign-objects
       ((lat '(:pointer :double))
        (lon '(:pointer :double))
        (val '(:pointer :double)))
-    (let ((res (codes_iterator_next iterator lat lon val)))
+    (let ((res (codes_grib_iterator_next iterator lat lon val)))
       (when (> res 0)
         (values (mem-ref lat :double)
                 (mem-ref lon :double)
                 (mem-ref val :double))))))
 
-(defcfun codes_iterator_next :int
+(defcfun codes_grib_iterator_next :int
   (iterator :pointer)
   (lat :pointer)
   (lon :pointer)
@@ -288,18 +288,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; previous
 
-(defun codes-iterator-previous (iterator)
+(defun codes-grib-iterator-previous (iterator)
   (with-foreign-objects
       ((lat '(:pointer :double))
        (lon '(:pointer :double))
        (val '(:pointer :double)))
-    (let ((res (codes_iterator_previous iterator lat lon val)))
+    (let ((res (codes_grib_iterator_previous iterator lat lon val)))
       (when (> res 0)
         (values (mem-ref lat :double)
                 (mem-ref lon :double)
                 (mem-ref val :double))))))
 
-(defcfun codes_iterator_previous :int
+(defcfun codes_grib_iterator_previous :int
   (iterator :pointer)
   (lat :pointer)
   (lon :pointer)
@@ -308,7 +308,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; reset
 
-(defcfun codes-iterator-reset :int
+(defcfun codes-grib-iterator-reset :int
   (iterator :pointer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
