@@ -1,4 +1,4 @@
-# cl-eccoodes
+# cl-eccodes
 CFFI bindings for GRIB-API functions from the ecCodes library (not complete, read access only)
 
 ## Description
