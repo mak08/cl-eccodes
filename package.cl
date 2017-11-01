@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description
 ;;; Author         Michael Kappert 2017
-;;; Last Modified <michael 2017-11-01 15:45:32>
+;;; Last Modified <michael 2017-11-01 17:05:08>
 
 (defpackage "CL-ECCODES"
   (:use "COMMON-LISP" "LOCAL-TIME" "CFFI")
@@ -9,40 +9,40 @@
             "FOPEN"
             "FCLOSE"
 
-            "GRIB-COUNT-IN-FILE"
+            "CODES-COUNT-IN-FILE"
 
-            "GRIB-INDEX-NEW-FROM-FILE"
-            "GRIB-INDEX-NEW"
-            "GRIB-INDEX-DELETE"
-            "GRIB-INDEX-ADD-FILE"
+            "CODES-INDEX-NEW-FROM-FILE"
+            "CODES-INDEX-NEW"
+            "CODES-INDEX-DELETE"
+            "CODES-INDEX-ADD-FILE"
 
-            "GRIB-INDEX-GET-SIZE"
+            "CODES-INDEX-GET-SIZE"
 
-            "GRIB-INDEX-GET-LONG"
-            "GRIB-INDEX-GET-DOUBLE"
-            "GRIB-INDEX-GET-STRING"
+            "CODES-INDEX-GET-LONG"
+            "CODES-INDEX-GET-DOUBLE"
+            "CODES-INDEX-GET-STRING"
 
-            "GRIB-INDEX-SELECT-LONG"
-            "GRIB-INDEX-SELECT-DOUBLE"
-            "GRIB-INDEX-SELECT-STRING"
+            "CODES-INDEX-SELECT-LONG"
+            "CODES-INDEX-SELECT-DOUBLE"
+            "CODES-INDEX-SELECT-STRING"
 
-            "GRIB-HANDLE-NEW-FROM-FILE"
+            "CODES-HANDLE-NEW-FROM-FILE"
             "WITH-HANDLE-FROM-INDEX"
-            "GRIB-HANDLE-NEW-FROM-INDEX"
-            "GRIB-HANDLE-DELETE"
+            "CODES-HANDLE-NEW-FROM-INDEX"
+            "CODES-HANDLE-DELETE"
 
-            "GRIB-GET-SIZE"
+            "CODES-GET-SIZE"
 
-            "GRIB-GET-LONG"
-            "GRIB-GET-DOUBLE"
-            "GRIB-GET-BYTES"
-            "GRIB-GET-STRING"
-            "GRIB-GET-LONG-ARRAY"
-            "GRIB-GET-DOUBLE-ARRAY"
-            "GRIB-GET-DOUBLE-ARRAY-AS-SINGLE"
+            "CODES-GET-LONG"
+            "CODES-GET-DOUBLE"
+            "CODES-GET-BYTES"
+            "CODES-GET-STRING"
+            "CODES-GET-LONG-ARRAY"
+            "CODES-GET-DOUBLE-ARRAY"
+            "CODES-GET-DOUBLE-ARRAY-AS-SINGLE"
 
-            "GRIB-ITERATOR-NEW"
-            "GRIB-ITERATOR-NEXT"))
+            "CODES-ITERATOR-NEW"
+            "CODES-ITERATOR-NEXT"))
 
 ;;; EOF
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
