@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description
 ;;; Author         Michael Kappert 2017
-;;; Last Modified <michael 2017-11-01 17:13:19>
+;;; Last Modified <michael 2019-01-02 16:07:11>
 
 (in-package :cl-eccodes)
 
@@ -9,9 +9,10 @@
   (let ((resultvar (gensym "RESULT-")))
     `(let* ((,handlevar (codes-handle-new-from-index ,index))
             (,resultvar
-             (progn ,@forms)))
+             (multiple-value-list
+              (progn ,@forms))))
        (codes-handle-delete ,handlevar)
-       ,resultvar)))
+       (values-list ,resultvar))))
 
 ;;; EOF
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
