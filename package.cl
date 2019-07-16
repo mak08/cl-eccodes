@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description
 ;;; Author         Michael Kappert 2017
-;;; Last Modified <michael 2017-11-01 17:56:39>
+;;; Last Modified <michael 2019-07-15 23:23:44>
 
 (defpackage "CL-ECCODES"
   (:use "COMMON-LISP" "LOCAL-TIME" "CFFI")
@@ -9,6 +9,8 @@
             "FOPEN"
             "FCLOSE"
 
+            "CODES-GET-ERROR-MESSAGE"
+            
             "CODES-COUNT-IN-FILE"
 
             "CODES-INDEX-NEW-FROM-FILE"

@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description  libeccodes bindings
 ;;; Author         Michael Kappert 2015
-;;; Last Modified <michael 2017-11-01 17:58:03>
+;;; Last Modified <michael 2019-07-15 23:05:09>
 
 (in-package :cl-eccodes)
 
@@ -14,6 +14,17 @@
   (:linux "libeccodes.so"))
 
 (use-foreign-library libeccodes)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Error codes
+
+
+(defcfun codes-get-error-message :string
+  (code :int))
+
+(defcfun codes-get-type-name :string
+  (code :int))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Handles
