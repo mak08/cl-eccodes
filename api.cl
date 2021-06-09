@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description  libeccodes bindings
 ;;; Author         Michael Kappert 2015
-;;; Last Modified <michael 2021-02-14 19:01:52>
+;;; Last Modified <michael 2021-06-08 21:23:47>
 
 (in-package :cl-eccodes)
 
@@ -11,7 +11,7 @@
 ;;;  Install with ./configure --disable-jpeg
 
 (define-foreign-library libeccodes
-  (:linux "libeccodes.so.0.1"))
+  (:linux #.(macros:get-library "libeccodes.so")))
 
 (use-foreign-library libeccodes)
 
