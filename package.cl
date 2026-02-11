@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description
 ;;; Author         Michael Kappert 2017
-;;; Last Modified <michael 2019-07-15 23:23:44>
+;;; Last Modified <michael 2026-01-31 18:08:36>
 
 (defpackage "CL-ECCODES"
   (:use "COMMON-LISP" "LOCAL-TIME" "CFFI")
@@ -28,8 +28,11 @@
             "CODES-INDEX-SELECT-DOUBLE"
             "CODES-INDEX-SELECT-STRING"
 
+            "CODES-GRIB-HANDLE-NEW-FROM-FILE"
+
             "CODES-HANDLE-NEW-FROM-FILE"
             "WITH-HANDLE-FROM-INDEX"
+            "WITH-GRIB-INDEX"
             "CODES-HANDLE-NEW-FROM-INDEX"
             "CODES-HANDLE-DELETE"
 

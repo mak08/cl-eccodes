@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description  libeccodes bindings
 ;;; Author         Michael Kappert 2015
-;;; Last Modified <michael 2021-06-08 21:23:47>
+;;; Last Modified <michael 2026-01-31 18:09:32>
 
 (in-package :cl-eccodes)
 
@@ -48,6 +48,20 @@
   (context :pointer)
   (file :pointer)
   (n (:pointer :int)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; codes_grib_handle_new_from_file
+
+(defun codes-grib-handle-new-from-file (c-file)
+  (with-foreign-object (err :int)
+    (values (codes_grib_handle_new_from_file (null-pointer) c-file err)
+            (mem-ref err :int))))
+
+(defcfun codes_grib_handle_new_from_file
+    :pointer
+  (context :pointer)
+  (file :pointer)
+  (err (:pointer :int)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; codes_handle_new_from_file
