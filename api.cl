@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Description  libeccodes bindings
 ;;; Author         Michael Kappert 2015
-;;; Last Modified <michael 2026-01-31 18:09:32>
+;;; Last Modified <michael 2026-02-12 19:34:38>
 
 (in-package :cl-eccodes)
 
@@ -500,6 +500,7 @@
      (unwind-protect
           (progn ,@forms)
        (unless (null-pointer-p ,var)
+         (log2:trace "Closing ~a" ,path)
          (fclose ,var)))))
 
 (defcfun fopen :pointer (fname :string) (mode :string))
